@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Grades</title>
+  </head>
+  <body>
+    <h1>Grades</h1>
+
+    {% block content %}
+
+    <ol>
+      {% for grade in grades %}
+        <li>{{ grade.course_id }} - {{ grade.result }}</li>
+      {% empty %}
+        <li>No grades have been released yet.</li>
+      {% endfor %}
+    </ol>
+
+    {% endblock content %}
+
+  </body>
+</html>

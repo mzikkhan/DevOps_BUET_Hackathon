@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Personal Information</title>
+  </head>
+  <body>
+    <h1>Student Information</h1>
+    {% block content %}
+    <h2>Courses taken:</h2>
+    <ol>
+      {% for course in courses %}
+        <li>{{ course.course_ID }} - {{ course.course_Name }} - {{ course.course_Description }}</li>
+      {% empty %}
+        <li>No courses have been added yet.</li>
+      {% endfor %}
+    </ol>
+
+    {% endblock content %}
+  </body>
+</html>
